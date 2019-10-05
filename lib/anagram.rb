@@ -10,8 +10,13 @@ class Anagram
     @word = word
   end
   
+  def matching
+    yield.split(//).sort == word.split(//).sort
+    
+  end
+  
   def match(phrase)
-    phrase.map { |piece| piece if piece.split(//).sort == @word.split(//).sort }
+    phrase.map{ |piece| piece if matching{piece} }.compact
   end
   
 end
