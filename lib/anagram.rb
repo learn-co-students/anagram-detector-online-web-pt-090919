@@ -1,17 +1,13 @@
-# Your code goes here!
 class Anagram
 
-  @@detector = []
+  attr_accessor :name
 
-  attr_accessor = :anagram
-
-  def initiliaze(anagram)
-    @anagram = anagram
-    @@detector << self
+  def initialize(word)
+    @name = word
   end
 
-  def self detect
-    @detector
+  def match(array)
+    array.select {|x| x.split("").sort == @name.split("").sort}
   end
-end
-end
+
+end 
